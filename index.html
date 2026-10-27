@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Медицинская помощь в Ергаках | Методическое пособие для туристов</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+            background: #f4f7fb;
+            color: #1e2a3a;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(0, 20, 30, 0.08);
+            padding: 2.5rem 2rem;
+            border: 1px solid #d9e2ec;
+        }
+        h1 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: #0b2b3c;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+            border-left: 8px solid #2b7a62;
+            padding-left: 1.5rem;
+        }
+        .subhead {
+            font-size: 1.2rem;
+            color: #3a5a6e;
+            margin-bottom: 2rem;
+            padding-left: 2rem;
+            border-bottom: 1px dashed #b8d0dd;
+            padding-bottom: 1rem;
+        }
+        .badge {
+            display: inline-block;
+            background: #e4f0ea;
+            color: #1e5a4a;
+            font-weight: 600;
+            font-size: 0.85rem;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            letter-spacing: 0.3px;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .alert {
+            background: #fff4e5;
+            border-left: 6px solid #d97706;
+            padding: 1.2rem 1.8rem;
+            border-radius: 16px;
+            margin: 1.8rem 0;
+            font-weight: 500;
+            color: #5c3c00;
+        }
+        .alert strong {
+            color: #a34e00;
+        }
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: #12455a;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        h2::before {
+            content: "◆";
+            font-size: 1.4rem;
+            color: #2b7a62;
+        }
+        h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-top: 1.8rem;
+            margin-bottom: 0.8rem;
+            color: #1b5a6b;
+        }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .card {
+            background: #f9fcff;
+            border-radius: 24px;
+            padding: 1.5rem 1.5rem 1.8rem;
+            border: 1px solid #cfe1ed;
+            box-shadow: 0 4px 12px rgba(0, 30, 40, 0.02);
+            transition: transform 0.1s ease;
+        }
+        .card:hover {
+            border-color: #9bc0d4;
+            background: #ffffff;
+        }
+        .card h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #1b4b5e;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .card ul, .card ol {
+            padding-left: 1.4rem;
+            margin-top: 0.5rem;
+        }
+        .card li {
+            margin-bottom: 0.5rem;
+        }
+        .bad {
+            color: #b91c1c;
+            font-weight: 600;
+        }
+        .good {
+            color: #166534;
+            font-weight: 600;
+        }
+        .step-list {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 0.2rem 0 0.2rem 1.8rem;
+            list-style: none;
+            counter-reset: step-counter;
+        }
+        .step-list li {
+            counter-increment: step-counter;
+            margin-bottom: 1rem;
+            padding-left: 2.5rem;
+            position: relative;
+        }
+        .step-list li::before {
+            content: counter(step-counter);
+            background: #2b7a62;
+            color: white;
+            font-weight: 700;
+            width: 1.8rem;
+            height: 1.8rem;
+            border-radius: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            position: absolute;
+            left: 0;
+            top: 0.1rem;
+        }
+        .table-wrap {
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            border-radius: 18px;
+            border: 1px solid #d0e0eb;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            font-size: 0.98rem;
+        }
+        th {
+            background: #e1eff7;
+            color: #0b3448;
+            font-weight: 700;
+            padding: 1rem 1.2rem;
+            text-align: left;
+            border-bottom: 2px solid #b4d0e0;
+        }
+        td {
+            padding: 0.9rem 1.2rem;
+            border-bottom: 1px solid #d9e6ef;
+            vertical-align: top;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .phone {
+            font-family: 'Courier New', monospace;
+            font-weight: 700;
+            background: #e8f0f7;
+            padding: 0.15rem 0.6rem;
+            border-radius: 20px;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+            color: #0e3b52;
+        }
+        .footer-note {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid #cbdde9;
+            font-size: 0.9rem;
+            color: #4d6272;
+            text-align: center;
+        }
+        .emergency-box {
+            background: #1f3c4a;
+            color: #f0f9ff;
+            border-radius: 28px;
+            padding: 2rem 2rem;
+            margin: 2rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .emergency-box .label {
+            font-size: 1.2rem;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+        .emergency-box .numbers {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 0.5rem;
+        }
+        .emergency-box .num-item {
+            background: #2e5a6e;
+            border-radius: 20px;
+            padding: 0.6rem 1.6rem;
+            font-weight: 700;
+            font-size: 1.6rem;
+            letter-spacing: 1px;
+        }
+        @media (max-width: 700px) {
+            .container { padding: 1.5rem 1rem; }
+            h1 { font-size: 1.8rem; padding-left: 1rem; }
+            .subhead { padding-left: 0; }
+            .emergency-box { flex-direction: column; align-items: flex-start; gap: 1rem; }
+            .emergency-box .numbers { gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Медицинская помощь<br>в природном парке Ергаки</h1>
+    <div class="subhead">Методическое пособие для туристов · первая помощь до прибытия спасателей</div>
+
+    <span class="badge">Красноярский край</span>
+    <span class="badge">Горно-таёжная местность</span>
+    <span class="badge">Удалённость от медпомощи</span>
+
+    <div class="alert">
+        <strong>⚠️ Главное правило:</strong> В условиях Ергаков эвакуация спасателями может занять часы. Ваша задача — стабилизировать состояние пострадавшего и удерживать его до прибытия помощи. Не оставляйте человека одного. Не ходите в одиночные походы [citation:1].
+    </div>
+
+    <h2>Экстренные телефоны</h2>
+    <div class="emergency-box">
+        <div>
+            <div class="label">Единый номер экстренных служб</div>
+            <div class="numbers">
+                <div class="num-item">112</div>
+                <div class="num-item">101</div>
+            </div>
+        </div>
+        <div style="font-size: 0.95rem; max-width: 320px; opacity: 0.9;">
+            Работают с мобильных телефонов даже при отсутствии SIM-карты. Сообщите: координаты (или ближайший ориентир), характер травмы, число пострадавших.
+        </div>
+    </div>
+
+    <h2>1. Переохлаждение и обморожение</h2>
+    <p>В горах погода меняется быстро. Влажная одежда и ветер резко ускоряют потерю тепла. Переохлаждение (гипотермия) — это снижение температуры тела ниже 35°C. Обморожение — местное повреждение тканей .</p>
+
+    <div class="card-grid">
+        <div class="card">
+            <h4>❄️ Общее переохлаждение</h4>
+            <p><strong>Признаки:</strong> сильная дрожь (или её исчезновение при тяжёлой степени), спутанность сознания, вялость, бледность, замедление пульса и дыхания.</p>
+            <p><strong>Что делать:</strong></p>
+            <ul>
+                <li>Перенести в защищённое от ветра место, снять мокрую одежду.</li>
+                <li>Укутать в сухое (спальный мешок, изотермическое покрывало серебристой стороной к телу) .</li>
+                <li>Согревать постепенно: тело, шею, подмышки, пах. Можно использовать бутылки с тёплой водой через ткань.</li>
+                <li>Если в сознании — дать тёплое сладкое питьё малыми порциями.</li>
+            </ul>
+            <p class="bad">НЕЛЬЗЯ: растирать тело, давать алкоголь, укладывать в горячую ванну, согревать конечности отдельно от тела (риск шока) .</p>
+        </div>
+        <div class="card">
+            <h4>🖐️ Обморожение</h4>
+            <p><strong>Признаки:</strong> кожа белая, безболезненная («деревянная»), при постукивании — глухой звук. После согревания появляются боль, отёк, пузыри .</p>
+            <p><strong>Что делать:</strong></p>
+            <ul>
+                <li>Укрыть поражённый участок теплоизолирующей повязкой (вата, несколько слоёв одежды, одеяло).</li>
+                <li>Согревание должно идти «изнутри» — за счёт восстановления кровообращения.</li>
+                <li>Дать тёплое питьё.</li>
+            </ul>
+            <p class="bad">НЕЛЬЗЯ: растирать снегом, спиртом, горячей водой, вскрывать пузыри [citation:7].</p>
+        </div>
+    </div>
+
+    <h2>2. Травмы и кровотечения</h2>
+    <p>Камнепады, скользкие склоны и перевалы — типичные источники травм в Ергаках. В 2025 году спасатели эвакуировали туристку вертолётом после падения камня на спуске с перевала [citation:1].</p>
+    <div class="card-grid">
+        <div class="card">
+            <h4>🩸 Сильное кровотечение</h4>
+            <ul>
+                <li>Наложить давящую повязку на рану.</li>
+                <li>При артериальном кровотечении (кровь ярко-алая, пульсирует) — наложить жгут выше раны. Обязательно зафиксировать время наложения.</li>
+                <li>Использовать стерильные салфетки и бинт из аптечки .</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h4>🦴 Переломы и вывихи</h4>
+            <ul>
+                <li>Не пытаться вправить конечность самостоятельно.</li>
+                <li>Иммобилизовать повреждённую часть: наложить шину (палка, треккинговая палка, ветки), зафиксировав два соседних сустава.</li>
+                <li>Приложить холод (гипотермический пакет) через ткань для уменьшения отёка.</li>
+                <li>Дать обезболивающее из аптечки, если есть и пострадавший в сознании.</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>3. Укусы и встреча с животными</h2>
+    <p>В парке обитают медведи. В 2026 году из-за выхода агрессивных зверей туристическую зону Ергаков временно закрывали [citation:6][citation:11]. Также возможны укусы насекомых (комары, мошка, пчёлы) и змей (гадюка обыкновенная).</p>
+    <div class="card-grid">
+        <div class="card">
+            <h4>🐻 Профилактика встречи с медведем</h4>
+            <ul>
+                <li>Шумите при движении по лесу (разговоры, свист).</li>
+                <li>Не оставляйте продукты в доступных местах, храните еду в герметичных контейнерах.</li>
+                <li>При встрече: не бегите, медленно отступайте, говорите громким спокойным голосом. Не смотрите зверю прямо в глаза.</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h4>🐍 Укус змеи</h4>
+            <ul>
+                <li>Обеспечить пострадавшему полный покой и неподвижность конечности.</li>
+                <li>Снять кольца, браслеты, тесную обувь с укушенной конечности.</li>
+                <li>Наложить чистую повязку на место укуса.</li>
+                <li>Давать обильное питьё.</li>
+            </ul>
+            <p class="bad">НЕЛЬЗЯ: накладывать жгут, надрезать ранку, отсасывать яд .</p>
+        </div>
+        <div class="card">
+            <h4>🐝 Укусы насекомых / аллергия</h4>
+            <ul>
+                <li>Приложить холод к месту укуса.</li>
+                <li>Принять антигистаминный препарат (если есть в аптечке).</li>
+                <li>Если появились затруднение дыхания, отёк лица/горла, головокружение — это анафилаксия. Требуется немедленная эвакуация и вызов спасателей. Если есть автоинъектор адреналина (EpiPen) — использовать по инструкции.</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>4. Аптечка для похода в Ергаки</h2>
+    <p>Комплектация должна быть лёгкой, но достаточной для автономного существования в течение 1–2 суток до прибытия помощи. Рекомендуется использовать стандартную аптечку первой помощи (по приказу Минздрава РФ) и дополнить её .</p>
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr><th>Группа</th><th>Что взять</th><th>Назначение</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Перевязка</td><td>Бинты стерильные (2–3 шт.), салфетки, лейкопластырь рулонный и бактерицидный</td><td>Раны, ссадины, фиксация</td></tr>
+                <tr><td>Кровотечение</td><td>Жгут кровоостанавливающий</td><td>Остановка артериального кровотечения</td></tr>
+                <tr><td>Термоизоляция</td><td>Покрывало спасательное изотермическое (серебристое)</td><td>Профилактика и лечение переохлаждения</td></tr>
+                <tr><td>Инструменты</td><td>Ножницы, перчатки медицинские, маска</td><td>Защита и обработка</td></tr>
+                <tr><td>Реанимация</td><td>Устройство «Рот-Устройство-Рот»</td><td>Искусственное дыхание</td></tr>
+                <tr><td>Дополнительно</td><td>Обезболивающее (парацетамол/ибупрофен), антигистаминное, гипотермический пакет (охлаждающий)</td><td>Симптоматическая помощь</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h2>5. Порядок действий при ЧП</h2>
+    <ol class="step-list">
+        <li><strong>Убедитесь в собственной безопасности.</strong> Не создавайте угрозу для себя (камнепад, дикое животное).</li>
+        <li><strong>Вызовите помощь.</strong> Наберите 112 или 101, сообщите координаты и характер травмы [citation:1].</li>
+        <li><strong>Остановите угрожающие жизни состояния:</strong> кровотечение, отсутствие дыхания (начать СЛР).</li>
+        <li><strong>Защитите от переохлаждения.</strong> Укутайте пострадавшего, подложите теплоизоляцию снизу.</li>
+        <li><strong>Оказывайте психологическую поддержку.</strong> Говорите спокойно, удерживайте внимание на дыхании.</li>
+        <li><strong>Ожидайте спасателей.</strong> Не пытайтесь самостоятельно транспортировать пострадавшего с тяжёлой травмой, если нет угрозы жизни на месте (пожар, сход лавины).</li>
+    </ol>
+
+    <div class="footer-note">
+        <p>Пособие составлено на основе рекомендаций МЧС России, Минздрава и данных о специфике природного парка Ергаки.</p>
+        <p style="margin-top: 0.5rem;">Помните: лучшая помощь — это профилактика. Планируйте маршрут, сообщайте о выходе на тропу, берите тёплые вещи и аптечку.</p>
+    </div>
+</div>
+</body>
+</html>
